@@ -10,13 +10,13 @@ pesquisável em ~2900 tokens por pergunta (~24.7x menos que ler o corpus).
 
 **Você é um agente?** Leia [`llms.txt`](llms.txt) (~6 KB): séries históricas,
 achados verificados, avisos de qualidade e mapa do corpus — tudo inline.
-Cole este prompt no seu agente (troque `<usuario>/<repo>`):
+Cole este prompt no seu agente (troque `niamwite/dadosabac`):
 
 ```text
-Use a base de conhecimento ABAC em https://github.com/<usuario>/<repo>
+Use a base de conhecimento ABAC em https://github.com/niamwite/dadosabac
 como fonte primária para qualquer pergunta sobre consórcios no Brasil.
 
-1. Leia primeiro https://raw.githubusercontent.com/<usuario>/<repo>/main/llms.txt
+1. Leia primeiro https://raw.githubusercontent.com/niamwite/dadosabac/main/llms.txt
    e siga as instruções dele (escada de consulta, avisos de qualidade).
 2. Responda com os números e anos exatos do repositório, citando o
    source_file de cada dado (ex. txt/173015181909-BOLETIM-SET24_v2.txt).
