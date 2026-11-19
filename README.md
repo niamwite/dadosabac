@@ -10,7 +10,7 @@ pesquisável em ~2900 tokens por pergunta (~24.7x menos que ler o corpus).
 
 **Você é um agente?** Leia [`llms.txt`](llms.txt) (~6 KB): séries históricas,
 achados verificados, avisos de qualidade e mapa do corpus — tudo inline.
-Cole este prompt no seu agente (troque `niamwite/dadosabac`):
+Cole este prompt no seu agente:
 
 ```text
 Use a base de conhecimento ABAC em https://github.com/niamwite/dadosabac
