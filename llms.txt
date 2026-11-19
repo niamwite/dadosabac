@@ -1,0 +1,110 @@
+# ABAC — Sistema de Consórcios (Brasil, 2019–2026) — LLM context
+
+> Base de conhecimento a partir de materiais oficiais da ABAC
+> (Associação Brasileira de Administradoras de Consórcios):
+> 57 boletins mensais (jan/2022–set/2026), 76 e-books por UF/região
+> (2020–1º sem/2026, 7 segmentos), 6 anuários (ed. 2020/22/23/24/25/26).
+> Total: 139 arquivos texto, ~265 mil palavras.
+
+## Como usar este repositório (agente remoto, sem CLI)
+
+1. **Comece por `graphify-out/wiki/index.md`** (~10 KB): mapa das 124
+   comunidades e hubs. Ache ONDE está o assunto (período/segmento/fonte).
+2. **Leia o artigo da wiki** (`graphify-out/wiki/*.md`, 134 artigos, 2–6 KB):
+   valores e variações MoM/YoY do bloco.
+3. **Número exato**: ache o arquivo em `INDICE.csv` (boletins:
+   competência ↔ arquivo) ou `INDICE_EBOOKS.csv` (período × segmento ↔
+   arquivo) e leia `txt/<arq>.txt` (~6 KB) ou `ebooks_txt/<arq>.txt`
+   (~6–14 KB). Anuários em `anuarios_txt/` (nome = edição; ano de
+   referência na seção Cobertura).
+4. **NUNCA abra inteiro**: `CONSOLIDADO.txt` (384 KB),
+   `CONSOLIDADO_EBOOKS.txt` (~1 MB), `graphify-out/graph.json` (1,1 MB).
+   Use busca/`grep` pontual. Com clone local e skill graphify instalada,
+   `graphify query "<pergunta>" --budget 1500` responde em ~2900 tokens.
+5. **Cite a fonte**: `source_file` (ex. `txt/173015181909-BOLETIM-SET24_v2.txt`).
+   Regras de confiança em "Avisos de qualidade" abaixo — siga todas.
+
+## Mapa do corpus
+
+| Caminho | Conteúdo | Índice |
+|---|---|---|
+| `txt/*.txt` (57) | boletins mensais jan/2022–set/2026 | `INDICE.csv` |
+| `ebooks_txt/*.txt` (76) | 7 segmentos × anuais + 1º semestres | `INDICE_EBOOKS.csv` |
+| `anuarios_txt/*.txt` (6) | anuários ed. 2020/22/23/24/25/26 | seção Cobertura |
+| `pdfs/`, `ebooks_pdfs/`, `anuarios_pdfs/` | PDFs originais | — |
+| `graphify-out/wiki/` | 134 artigos por bloco + índice | — |
+| `graphify-out/GRAPH_REPORT.md` | panorama, god nodes, perguntas | — |
+
+Segmentos: Geral (Sistema), Veículos Leves, Motocicletas, Veículos
+Pesados, Imóveis, Serviços, Eletroeletrônicos. Três métricas em tudo:
+cotas vendidas, participantes ativos, contemplações (+ créditos e tíquete).
+
+## Séries históricas (totais nacionais — use estes absolutos)
+
+Sistema de Consórcios:
+| ano | cotas (mi) | part. ativos dez (mi) | contempl. (mi) | créditos (R$ bi) | tíquete médio (R$ mil) |
+|---|---|---|---|---|---|
+| 2019 | 2,87 | 7,34 | 1,23 | 134,17 | 46,76 |
+| 2021 | 3,46 | 8,37 | 1,40 | 222,26 | 64,15 |
+| 2022 | 3,93 | 9,41 | 1,52 | 252,09 | 64,09 |
+| 2023 | 4,18 | 10,29 | 1,62 | 316,70 | 75,70 |
+| 2024 | 4,49 | 11,21 | 1,70 | 378,73 | ~84,4* |
+| 2025 | 5,16 | 12,76 | 1,77 | 500,27 | 96,93 |
+
+\* derivado: 378,73 bi ÷ 4.485.318 cotas. 2020 ≈ 3,02 mi cotas (derivado
+de +14,6% em 2021); sem anuário cobrindo 2020 — único buraco da série.
+
+Cotas por segmento (mil):
+| ano | Leves | Motos | Pesados | Imóveis | Serviços | Eletros |
+|---|---|---|---|---|---|---|
+| 2020 | n/d | 1.048 | 109 | n/d | n/d | 77 |
+| 2021 | 1.450 | 1.124 | 183 | 497 | 82 | 130 |
+| 2022 | 1.501 | 1.221 | 303 | 645 | 64 | 200 |
+| 2023 | 1.697 | 1.270 | 310 | 779 | 47 | 58 |
+| 2024 | 1.746 | 1.328 | 233 | 993 | 53 | 133 |
+| 2025 | 1.911 | 1.438 | 198 | 1.352 | 62 | 201 |
+
+## Achados principais (todos verificados nos txt-fonte)
+
+1. **Crédito cresce via tíquete, não via gente**: tíquete 46,76k→96,93k
+   (+107%, ~+40% real) vs cotas +80% (2019–2025). Motor = mix: imóveis
+   foram de 14,3% (2021) para 26,2% (2025) das cotas.
+2. **Boom de imóveis**: +20–40% ao ano há 4 anos (1,35M em 2025, +41,9%
+   no 1S26). Mas contemplações (+26%) < vendas (+36%) em 2025: a fila alonga.
+3. **Pesados em colapso de vendas (-40% do pico de 2022)** com
+   contemplações e participantes subindo: problema é aquisição, não
+   retenção (suspeita: competição com crédito direcionado p/ caminhões).
+4. **Nordeste = metade das motos** (50,7% das cotas no 1S26; BA lidera há
+   4 anos), mas conversão cai: contemplações/cotas de 55% (2023) para 47%
+   (2025); contemplações 2025 caíram -2,6% com vendas +8,3%.
+5. **Eletros é pêndulo** (77k→200k→58k→133k→201k): termômetro de renda,
+   não mercado consolidado.
+6. **Serviços ressuscitou** (+16,9% em 2025 após quase morrer em 2023) e é
+   anomalamente paranaense: PR ~22% das cotas, Sul 46% dos participantes.
+7. **Gap vendas×entrega**: 2025 cotas +15,1% vs contemplações +4,2%.
+   Indicador nº 1 a monitorar.
+8. **Interior avança**: SP ~22,8% (2021) → ~21% (1S26) dos participantes;
+   Centro-Oeste/Norte/Nordeste crescem acima da média há 3 anos.
+
+## Avisos de qualidade (obrigatórios)
+
+- **Recompute variações dos absolutos**: % impressos nos e-books às vezes
+  trocam a base. Ex. real: e-book eletros 2024 diz "132.977 (+67,7% vs
+  2023)", mas 132.977÷57.635 (cotas 2023) = +130,7%; os +67,7% batem com
+  132.977÷79.288 = contemplações 2023.
+- **Out/2023**: queda de contemplações é mudança de critério de datas em
+  fim de mês, não queda real.
+- **Rótulos 1º sem/2022** nos e-books CONTÊM DADOS DE 2021 (erro do site
+  ABAC; ver coluna `alerta` em `INDICE_EBOOKS.csv`). Arquivo eletros
+  "2SEM-2025" tem capa com duplo rótulo 1SEM-2024: vale o conteúdo
+  (Jan-Dez/2025).
+- `EXTRACTED` = está na fonte; `INFERRED` = ligação temporal/similaridade
+  criada na extração; `AMBIGUOUS` = OCR duvidoso, conferir no txt.
+
+## Cobertura e lacunas
+
+Anuários: ed. 2020 (ref. 2019), 2022 (2021), 2023 (2022), 2024 (2023),
+2025 (2024), 2026 (2025). Faltam ed. 2015–2019 e 2021 (site sem
+download, backend de e-mail morto). Boletins só desde jan/2022; 2020–2021
+cobertos por e-books + anuários. Prefixo do ID no grafo indica a fonte:
+`txt_` = boletim, `ebooks_txt_` = e-book, `anuarios_txt_` = anuário.

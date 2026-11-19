@@ -1,0 +1,11 @@
+pdfs/
+ebooks_pdfs/
+anuarios_pdfs/
+.venv/
+graphify-out/
+wiki/
+*.csv
+*.md
+CONSOLIDADO*.txt
+baixa_*.py
+urls.txt

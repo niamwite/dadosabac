@@ -1,0 +1,7 @@
+ebooks_pdfs/
+graphify-out/cache/
+__pycache__/
+*.pyc
+/tmp/
+*.tmp
+.DS_Store
